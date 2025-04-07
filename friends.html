@@ -13,6 +13,7 @@
 
     html {
       scroll-behavior: smooth;
+      height: 100%;
     }
 
     body {
@@ -20,6 +21,9 @@
       line-height: 1.6;
       color: #4b5563;
       background-color: #f3f4f6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .container {
@@ -83,6 +87,11 @@
       border: none;
       color: #374151;
       z-index: 100;
+    }
+
+    main {
+      flex: 1;
+      padding-top: 70px;
     }
 
     section {
@@ -177,6 +186,7 @@
       background-color: #1f2937;
       color: #e5e7eb;
       padding: 3rem 0 1rem;
+      flex-shrink: 0;
     }
 
     .footer-content {
@@ -326,58 +336,60 @@
     </div>
   </header>
 
-  <!-- Friends Section -->
-  <section id="friends">
-    <div class="container">
-      <div class="section-title">
-        <h2>My Friends</h2>
-      </div>
-      
-      <div class="hobby-grid">
-        <div class="hobby-card">
-          <img src="src/img/jasmine.jpg" alt="Friend 1" class="hobby-img" style="height: 300px;">
-          <div class="hobby-content">
-            <h3 class="hobby-title">Jasmine Aleena Wafa</h3>
-            <p>My encounter with her started in junior high school. However, I only got to know her in 2021 which started with playing games together. Since then, we've become pretty close friends.</p>
-          </div>
-        </div>
-        <div class="hobby-card">
-          <img src="src/img/fauzan.jpg" alt="Friend 2" class="hobby-img" style="height: 300px;">
-          <div class="hobby-content">
-            <h3 class="hobby-title">Putra Al Fauzan</h3>
-            <p>I met him in 12th grade. At first we just chatted, then we became close and got closer when we played games together and chatted online on discord.</p>
-          </div>
-        </div>
-        <div class="hobby-card">
-          <img src="src/img/kemal.jpg" alt="Friend 3" class="hobby-img" style="height: 300px;">
-          <div class="hobby-content">
-            <h3 class="hobby-title">Muhammad Kemal Azima</h3>
-            <p>Just like Fauzan, he is also a friend I met in 12th grade. We often play games together and walk together when at school. That's what made us close until now.</p>
-          </div>
-        </div>
-        <div class="hobby-card">
-          <img src="src/img/allyssa.jpg" alt="Friend 4" class="hobby-img" style="height: 300px;">
-          <div class="hobby-content">
-            <h3 class="hobby-title">Allyssa Kusuma Sayydina Widodo</h3>
-            <p>I first met her on discord. At that time I was chatting on a discord server belonging to one of my online friends. Since then, we often chatted together into the night on discord. Although she lives in Malang, we have met several times.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- New Group Photo Section -->
-      <div class="group-photo-section">
+  <main>
+    <!-- Friends Section -->
+    <section id="friends">
+      <div class="container">
         <div class="section-title">
-          <h2>My College Classmates</h2>
+          <h2>My Friends</h2>
         </div>
-        <div class="group-photo-container">
-          <img src="src/img/ti2b.jpg" alt="My college classmates" class="group-photo">
-          <div class="group-description">
-            <p>Meet the people who made my time at PNJ unforgettable. Whether troubleshooting assignments at midnight or cheering each other on during exams, this class taught me the value of teamwork and resilience. Beyond grades, they've given me friendships and lessons I'll carry forward.</p>
+        
+        <div class="hobby-grid">
+          <div class="hobby-card">
+            <img src="src/img/jasmine.jpg" alt="Friend 1" class="hobby-img" style="height: 300px;">
+            <div class="hobby-content">
+              <h3 class="hobby-title">Jasmine Aleena Wafa</h3>
+              <p>My encounter with her started in junior high school. However, I only got to know her in 2021 which started with playing games together. Since then, we've become pretty close friends.</p>
+            </div>
+          </div>
+          <div class="hobby-card">
+            <img src="src/img/fauzan.jpg" alt="Friend 2" class="hobby-img" style="height: 300px;">
+            <div class="hobby-content">
+              <h3 class="hobby-title">Putra Al Fauzan</h3>
+              <p>I met him in 12th grade. At first we just chatted, then we became close and got closer when we played games together and chatted online on discord.</p>
+            </div>
+          </div>
+          <div class="hobby-card">
+            <img src="src/img/kemal.jpg" alt="Friend 3" class="hobby-img" style="height: 300px;">
+            <div class="hobby-content">
+              <h3 class="hobby-title">Muhammad Kemal Azima</h3>
+              <p>Just like Fauzan, he is also a friend I met in 12th grade. We often play games together and walk together when at school. That's what made us close until now.</p>
+            </div>
+          </div>
+          <div class="hobby-card">
+            <img src="src/img/allyssa.jpg" alt="Friend 4" class="hobby-img" style="height: 300px;">
+            <div class="hobby-content">
+              <h3 class="hobby-title">Allyssa Kusuma Sayydina Widodo</h3>
+              <p>I first met her on discord. At that time I was chatting on a discord server belonging to one of my online friends. Since then, we often chatted together into the night on discord. Although she lives in Malang, we have met several times.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Group Photo Section -->
+        <div class="group-photo-section">
+          <div class="section-title">
+            <h2>My College Classmates</h2>
+          </div>
+          <div class="group-photo-container">
+            <img src="src/img/ti2b.jpg" alt="My college classmates" class="group-photo">
+            <div class="group-description">
+              <p>Meet the people who made my time at PNJ unforgettable. Whether troubleshooting assignments at midnight or cheering each other on during exams, this class taught me the value of teamwork and resilience. Beyond grades, they've given me friendships and lessons I'll carry forward.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
