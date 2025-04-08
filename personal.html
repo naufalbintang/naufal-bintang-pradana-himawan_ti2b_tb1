@@ -289,7 +289,6 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header id="top">
     <div class="container">
       <nav>
@@ -306,7 +305,6 @@
     </div>
   </header>
 
-  <!-- Personal Information Section -->
   <section id="personal">
     <div class="container">
       <div class="section-title">
@@ -355,7 +353,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
@@ -396,7 +393,6 @@
   </footer>
 
   <script>
-    // Toggle mobile menu
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
   
@@ -404,7 +400,6 @@
       navLinks.classList.toggle('active');
     });
   
-    // Close menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
