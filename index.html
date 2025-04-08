@@ -171,21 +171,72 @@
       font-size: clamp(0.9rem, 2vw, 1rem);
     }
 
-    .btn {
-      display: inline-block;
+    /* New Contact Form Styles */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin-top: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #14b8a6;
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      align-self: flex-start;
       background-color: #14b8a6;
       color: white;
       padding: 0.75rem 1.5rem;
+      border: none;
       border-radius: 9999px;
-      text-decoration: none;
       font-weight: 600;
+      cursor: pointer;
       transition: all 0.3s ease;
-      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-size: 1rem;
     }
 
-    .btn:hover {
+    .form-submit:hover {
       opacity: 0.9;
       box-shadow: 0 4px 10px rgba(20, 184, 166, 0.3);
+    }
+
+    .form-success {
+      display: none;
+      color: #14b8a6;
+      font-weight: 500;
+      margin-top: 1rem;
     }
 
     footer {
@@ -278,6 +329,14 @@
       .hero-image img {
         width: min(70vw, 250px);
         height: min(70vw, 250px);
+      }
+
+      .contact-form {
+        margin: 2rem auto 0;
+      }
+      
+      .form-submit {
+        align-self: center;
       }
     }
 
@@ -381,7 +440,24 @@
             <p class="hero-description">
               Someone who loves to learn and is interested in technology, especially programming.
             </p>
-            <a href="mailto:naufalbintangpradana@gmail.com" target="_blank" class="btn">Contact Me</a>
+            
+            <!-- Contact Form -->
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea id="message" class="form-textarea" required></textarea>
+              </div>
+              <button type="submit" class="form-submit">Send Message</button>
+              <p id="formSuccess" class="form-success">Thank you! Your message has been sent.</p>
+            </form>
           </div>
           <div class="hero-image">
             <img src="src/img/naufal.jpg" alt="Profile Picture">
@@ -398,16 +474,14 @@
           <h3 class="footer-title">Naufal Bintang Pradana Himawan</h3>
           <p>Someone who is curious and loves to learn, and doesn't like to be idle too much.</p>
           <div class="social-links">
-            <a href="https://www.instagram.com/_naufalbintang_/" target="_blank" class="social-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-            <a href="https://x.com/_arixa" target="_blank" class="social-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
+            <a href="https://www.instagram.com/_naufalbintang_/" target="_blank" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+              <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g>
+              </svg></a>
+            <a href="https://x.com/_arixa" target="_blank" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 48 48">
+              <path fill="#fff" d="M34.257,34h-6.437L13.829,14h6.437L34.257,34z M28.587,32.304h2.563L19.499,15.696h-2.563 L28.587,32.304z"></path>
+              <polygon fill="#fff" points="15.866,34 23.069,25.656 22.127,24.407 13.823,34"></polygon>
+              <polygon fill="#fff" points="24.45,21.721 25.355,23.01 33.136,14 31.136,14"></polygon>
+            </svg></a>
           </div>
         </div>
         <div class="footer-section">
@@ -434,7 +508,6 @@
   </footer>
 
   <script>
-    // Toggle mobile menu
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
   
@@ -442,11 +515,24 @@
       navLinks.classList.toggle('active');
     });
   
-    // Close menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      formSuccess.style.display = 'block';
+      contactForm.reset();
+      
+      setTimeout(() => {
+        formSuccess.style.display = 'none';
+      }, 5000);
     });
   </script>
 </body>
